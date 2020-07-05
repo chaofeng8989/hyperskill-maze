@@ -115,6 +115,20 @@ public class Maze {
         }
 
     }
+    /*
+        o o 9 o o
+        o 8 1 2 o
+        C 7 X 3 A
+        o 6 5 4 o
+        o o B o o
+
+        All possible neighbors are {0,1,2,3,4,5,6,7,8,9,A,B,C}
+
+        PriorityQueue<>() offer [node1, edge, node2];
+     */
+
+
+
     private void addNeighbors(PriorityQueue<int[]> pq, int px, int py, Set<String> visited, Set<String> nodes) {
         if(!visited.contains((px+2) +","+  py) && nodes.contains((px+2) +","+  py))
             pq.offer(new int[]{px, py, px + 1, py, px+2, py, random.nextInt(1000)});
